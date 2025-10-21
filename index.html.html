@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Cinta untuk Hidde 💙</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #d0eaff, #f0faff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border: 2px solid #66ccff;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #007acc;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3em;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 16px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background-color: #005f99;
+    }
+  
+
+    #pesan {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #pesan.tampil {
+      opacity: 1;
+    }
+    #pesan.hilang {
+      opacity: 0;
+    }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="greeting">💙 Halo! 💙</h1>
+    <button onclick="tampilkanNama()">click to see the message</button>
+    <p id="pesan"></p>
+  </div>
+
+  <script>
+    function tampilkanNama() {
+      const nama = "Hidde Robeer Lekker";
+      document.getElementById("greeting").textContent = `💙 Hai ${nama}! 💙`;
+      const pesan = document.getElementById("pesan");
+      pesan.textContent = "Have a great day at work, you'll be fine, proud of you as always :)";
+      pesan.classList.remove('hilang');
+      pesan.classList.add('tampil');
+      const tombol = document.getElementById('tombol');
+      tombol.style.visibility = 'hidden';
+      tombol.style.opacity = '0';
+      tombol.style.transition = 'opacity 0.5s ease-out';
+      setTimeout(() => { tombol.style.display = 'none'; }, 500);
+    }
+  </script>
+</body>
+</html>
